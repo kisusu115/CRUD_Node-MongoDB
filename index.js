@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Product = require("./models/product.model.js");
+const Employee = require("./models/employee.model.js");
 const productRoutes = require("./routes/product.route.js");
+const employeeRoutes = require("./routes/employee.route.js");
 const app = express();
 
 //미들웨어
@@ -15,6 +17,7 @@ app.get("/", (req, res) => {
 
 //routes
 app.use("/api/products", productRoutes);
+app.use("/api/employees", employeeRoutes);
 
 //MongoDB 연결
 mongoose
